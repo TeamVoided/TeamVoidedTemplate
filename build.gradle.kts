@@ -44,10 +44,24 @@ dependencies {
     // Testing
     modImplementation(libs.creative.works)
 }
+val username = "vDev"
+val uuid: String? = null
 
 loom {
-    splitEnvironmentSourceSets()
     runs {
+        named("client") {
+            programArgs("--username", username)
+            uuid?.let { programArgs("--uuid", uuid) }
+        }
+
+        create("TestWorld") {
+            client()
+            ideConfigGenerated(true)
+            runDir("run")
+            programArgs("--quickPlaySingleplayer", "test", "--username", username)
+            uuid?.let { programArgs("--uuid", uuid) }
+        }
+
         create("DataGen") {
             client()
             ideConfigGenerated(true)
@@ -55,13 +69,6 @@ loom {
             vmArg("-Dfabric-api.datagen.output-dir=${file("src/main/generated")}")
             vmArg("-Dfabric-api.datagen.modid=${modSettings.modId()}")
             runDir("build/datagen")
-        }
-
-        create("TestWorld") {
-            client()
-            ideConfigGenerated(true)
-            runDir("run")
-            programArgs("--quickPlaySingleplayer", "test", "--username", "vDev")
         }
     }
 }
