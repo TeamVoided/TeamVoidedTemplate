@@ -3,15 +3,19 @@ kotlin = "2.1.20"
 fabric-loom = "1.10-SNAPSHOT"
 iridium = "3.4.0"
 
+# Dependencies
 modmenu = "11.0.3"
 emi = "1.1.20+1.21.1"
+fzzy-config = "0.6.7+1.21"
 
 # Testing
-creative-works = "0.3.0"
+creative-works = "0.4.0"
 
 [libraries]
+# Dependencies
 modmenu = { module = "com.terraformersmc:modmenu", version.ref = "modmenu" }
 emi = { module = "dev.emi:emi-fabric", version.ref = "emi" }
+fzzy-config = { module = "me.fzzyhmstrs:fzzy_config", version.ref = "fzzy-config" }
 # Testing
 creative-works = { module = "org.teamvoided:creative_works", version.ref = "creative-works" }
 
@@ -19,6 +23,6 @@ creative-works = { module = "org.teamvoided:creative_works", version.ref = "crea
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 fabric-loom = { id = "fabric-loom", version.ref = "fabric-loom" }
-iridium = { id = "org.teamvoided.iridium", version.ref = "iridium"}
-iridium-publish = { id = "iridium.project.publish-script", version.ref = "iridium"}
+iridium = { id = "org.teamvoided.iridium", version.ref = "iridium" }
+iridium-publish = { id = "iridium.project.publish-script", version.ref = "iridium" }
 iridium-upload = { id = "iridium.mod.upload-script", version.ref = "iridium" }
