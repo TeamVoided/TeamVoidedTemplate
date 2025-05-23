@@ -9,6 +9,7 @@ modmenu = "11.0.3"
 emi = "1.1.22+1.21.1"
 # Testing
 creative-works = "0.4.0"
+imguimc = "1.21.1-1.0.8"
 
 [libraries]
 # Dependencies
@@ -18,6 +19,7 @@ modmenu = { module = "com.terraformersmc:modmenu", version.ref = "modmenu" }
 emi = { module = "dev.emi:emi-fabric", version.ref = "emi" }
 # Testing
 creative-works = { module = "org.teamvoided:creative_works", version.ref = "creative-works" }
+imguimc = { module = "maven.modrinth:imgui-mc", version.ref = "imguimc" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

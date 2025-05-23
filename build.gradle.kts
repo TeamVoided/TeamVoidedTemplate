@@ -49,6 +49,7 @@ dependencies {
     modLocalRuntime(libs.emi)
     // Testing
     modImplementation(libs.creative.works)
+    modImplementation(libs.imguimc)
 }
 val username = "vDev"
 val uuid: String? = null
