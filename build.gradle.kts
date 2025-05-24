@@ -55,6 +55,7 @@ val username = "vDev"
 val uuid: String? = null
 
 loom {
+    splitEnvironmentSourceSets()
     runs {
         named("client") {
             programArgs("--username", username)
