@@ -5,7 +5,7 @@ group = "org.teamvoided"
 githubRepo = "Teamvoided/TeamVoidedTemplateMod"
 discordServerInviteId = "KZ5Q364hEg"
 authors = [ "TheEnderCore" ]
-majorMinecraftVersion = "1.21"
+majorMinecraftVersion = ">=1.21"
 minecraftVersion = "1.21.1"
 fabricLoaderVersion = "0.16.14"
 fabricApiVersion = "0.116.0+1.21.1"

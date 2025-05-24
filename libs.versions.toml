@@ -1,7 +1,7 @@
 [versions]
 kotlin = "2.1.20"
 fabric-loom = "1.10-SNAPSHOT"
-iridium = "3.4.0"
+iridium = "3.5.0"
 # Dependencies
 fzzy-config = "0.6.9+1.21"
 # QoL
