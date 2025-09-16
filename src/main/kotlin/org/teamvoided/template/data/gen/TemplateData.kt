@@ -2,7 +2,7 @@ package org.teamvoided.template.data.gen
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator
-import net.minecraft.registry.RegistrySetBuilder
+import net.minecraft.core.RegistrySetBuilder
 import org.teamvoided.template.Template.log
 
 @Suppress("unused")

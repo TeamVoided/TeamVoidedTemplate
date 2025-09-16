@@ -1,7 +1,7 @@
 package org.teamvoided.template
 
 import me.fzzyhmstrs.fzzy_config.api.ConfigApi
-import net.minecraft.util.Identifier
+import net.minecraft.resources.ResourceLocation
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.teamvoided.template.config.TemplateConfig
@@ -20,5 +20,5 @@ object Template {
         log.info("Hello from Common")
     }
 
-    fun id(path: String) = Identifier.of(MODID, path)
+    fun id(path: String) = ResourceLocation.fromNamespaceAndPath(MODID, path)
 }
