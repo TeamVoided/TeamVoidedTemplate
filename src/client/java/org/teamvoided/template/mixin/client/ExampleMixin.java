@@ -1,4 +1,4 @@
-package org.teamvoided.template.mixin;
+package org.teamvoided.template.mixin.client;
 
 import net.minecraft.client.Minecraft;
 import org.spongepowered.asm.mixin.Mixin;

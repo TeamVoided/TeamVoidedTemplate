@@ -31,7 +31,7 @@ repositories {
 
 modSettings {
     entrypoint("main", "org.teamvoided.template.Template::init")
-    entrypoint("client", "org.teamvoided.template.TemplateClient::init")
+    entrypoint("client", "org.teamvoided.template.client.TemplateClient::init")
     entrypoint("fabric-datagen", "org.teamvoided.template.data.gen.TemplateData")
 
     mixinFile("${modId()}.client.mixins.json")
