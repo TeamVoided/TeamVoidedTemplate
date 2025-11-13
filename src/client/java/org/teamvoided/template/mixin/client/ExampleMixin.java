@@ -11,7 +11,7 @@ import static org.teamvoided.template.Template.log;
 @Mixin(Minecraft.class)
 public class ExampleMixin {
 
-    @Inject(at = @At("HEAD"), method = "run")
+    @Inject(method = "run", at = @At("HEAD"))
     private void run(CallbackInfo info) {
         log.info("Hello from Mixin");
     }
