@@ -24,8 +24,8 @@ fun <T : Any> getModEntries(registry: Registry<T>): List<T> = registry.holders()
     .map(Holder<T>::value)
     .toList()
 
-fun <T : Any> Registry<T>.register(id: ResourceLocation, entry: T): T = Registry.register(this, id, entry)
-fun <T : Any> Registry<T>.registerHolder(id: ResourceLocation, entry: T): Holder.Reference<T> =
+fun <V : Any, T : V> Registry<V>.register(id: ResourceLocation, entry: T): T = Registry.register(this, id, entry)
+fun <V : Any, T : V> Registry<T>.registerHolder(id: ResourceLocation, entry: T): Holder.Reference<T> =
     Registry.registerForHolder(this, id, entry)
 
 fun <T : Any, R : Registry<T>> ResourceKey<R>.tag(id: ResourceLocation): TagKey<T> = TagKey.create(this, id)
