@@ -13,13 +13,13 @@ import org.teamvoided.template.Template.MODID
 
 fun isDev() = FabricLoader.getInstance().isDevelopmentEnvironment
 
-fun <T> isModHolder(holder: Holder<T>) = holder.`is` { it.location().namespace == MODID }
+fun <T : Any> isModHolder(holder: Holder<T>) = holder.`is` { it.location().namespace == MODID }
 
-fun <T> getModHolders(registry: Registry<T>): List<Holder.Reference<T>> = registry.holders()
+fun <T : Any> getModHolders(registry: Registry<T>): List<Holder.Reference<T>> = registry.holders()
     .filter(::isModHolder)
     .toList()
 
-fun <T> getModEntries(registry: Registry<T>): List<T> = registry.holders()
+fun <T : Any> getModEntries(registry: Registry<T>): List<T> = registry.holders()
     .filter(::isModHolder)
     .map(Holder<T>::value)
     .toList()
@@ -28,5 +28,5 @@ fun <T : Any> Registry<T>.register(id: ResourceLocation, entry: T): T = Registry
 fun <T : Any> Registry<T>.registerHolder(id: ResourceLocation, entry: T): Holder.Reference<T> =
     Registry.registerForHolder(this, id, entry)
 
-fun <T, R : Registry<T>> ResourceKey<R>.tag(id: ResourceLocation): TagKey<T> = TagKey.create(this, id)
-fun <T, R : Registry<T>> ResourceKey<R>.key(id: ResourceLocation): ResourceKey<T> = ResourceKey.create(this, id)
+fun <T : Any, R : Registry<T>> ResourceKey<R>.tag(id: ResourceLocation): TagKey<T> = TagKey.create(this, id)
+fun <T : Any, R : Registry<T>> ResourceKey<R>.key(id: ResourceLocation): ResourceKey<T> = ResourceKey.create(this, id)
