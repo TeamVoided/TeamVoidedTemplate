@@ -10,9 +10,13 @@ import org.teamvoided.template.Template.id
 
 @Suppress("unused")
 class TemplateConfig : Config(id(MODID)) {
+
     var groupName = ConfigGroup("group_id", false)
+
     var commonEntry = ValidatedInt(0, 10, -10, TEXTBOX_WITH_BUTTONS)
+
     @NonSync
     @ConfigGroup.Pop
     var clientEntry = true
+
 }

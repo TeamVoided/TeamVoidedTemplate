@@ -2,6 +2,7 @@
 src/main/generated/
 .kotlin/
 run/
+runs/
 .env
 
 ### Gradle ###
@@ -12,7 +13,8 @@ build/
 !**/src/test/**/build/
 
 ### IntelliJ IDEA ###
-/.idea/
+.idea/
+!.idea/icon.png
 *.iws
 *.iml
 *.ipr
@@ -33,11 +35,11 @@ bin/
 !**/src/test/**/bin/
 
 ### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
 
 ### VS Code ###
 .vscode/

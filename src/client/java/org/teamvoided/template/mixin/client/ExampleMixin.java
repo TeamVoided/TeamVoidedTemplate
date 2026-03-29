@@ -15,4 +15,5 @@ public class ExampleMixin {
     private void run(CallbackInfo info) {
         log.info("Hello from Mixin");
     }
+
 }
