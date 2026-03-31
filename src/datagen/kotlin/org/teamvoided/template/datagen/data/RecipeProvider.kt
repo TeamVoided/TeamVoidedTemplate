@@ -6,10 +6,7 @@ import net.minecraft.core.HolderLookup
 import net.minecraft.data.recipes.RecipeCategory
 import net.minecraft.data.recipes.RecipeOutput
 import net.minecraft.data.recipes.ShapelessRecipeBuilder
-import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.Items
-import org.teamvoided.template.Template.id
-import org.teamvoided.template.datagen.TemplateData.SUFFIX
 import org.teamvoided.template.init.TemplateItems
 import java.util.concurrent.CompletableFuture
 
@@ -22,10 +19,6 @@ class RecipeProvider(o: FabricDataOutput, p: CompletableFuture<HolderLookup.Prov
             .unlockedBy("has_apple", has(Items.APPLE))
             .unlockedBy("has_apple_2", has(TemplateItems.APPLE_2))
             .save(e)
-    }
-
-    override fun getRecipeIdentifier(id: ResourceLocation): ResourceLocation {
-        return id(id.namespace.removeSuffix(SUFFIX), id.path)
     }
 
 }
