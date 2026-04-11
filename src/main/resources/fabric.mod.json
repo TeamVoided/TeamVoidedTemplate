@@ -20,8 +20,11 @@
     ]
   },
   "mixins": [
-    "template.client.mixins.json",
-    "template.mixins.json"
+    "template.mixins.json",
+    {
+      "config": "template.client.mixins.json",
+      "environment": "client"
+    }
   ],
   "accessWidener": "template.classtweaker",
   "depends": {
