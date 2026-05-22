@@ -1,3 +1,4 @@
+# see https://fabricmc.net/develop/ for new versions
 [versions]
     java = "21"
     kotlin = "2.3.21"
@@ -33,6 +34,8 @@
     # Testing
     creative-works = { module = "org.teamvoided:creative_works", version.ref = "creative_works" }
     imguimc = { module = "maven.modrinth:imgui-mc", version.ref = "imguimc" }
+[bundles]
+    cw = [ "creative-works", "imguimc" ]
 
 [plugins]
     kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
@@ -41,4 +44,3 @@
     iridium = { id = "org.teamvoided.iridium", version.ref = "iridium" }
     iridium-publish = { id = "iridium.project.publish-script", version.ref = "iridium" }
     iridium-upload = { id = "iridium.mod.upload-script", version.ref = "iridium" }
-
