@@ -84,7 +84,9 @@ loom {
             uuid?.let { programArgs("--uuid", it) }
         }
 
-        forEach { it.vmArgs("-XX:+AllowEnhancedClassRedefinition") }
+        // If enabled this you can hotswap basally anything
+        // Requires a JetBrains runtime!
+//        forEach { it.vmArgs("-XX:+AllowEnhancedClassRedefinition") }
     }
 }
 
