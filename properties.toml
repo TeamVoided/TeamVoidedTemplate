@@ -7,5 +7,4 @@ github_repo = "Teamvoided/TeamVoidedTemplateMod"
 discord_invite = "https://discord.gg/KZ5Q364hEg"
 authors = [ "TheEnderCore" ]
 license = "MIT"
-min_minecraft = "1.21.1" # Inclusive
-max_minecraft = "1.21.2" # Exclusive
+version_range = ">=1.21.1 <1.21.2"

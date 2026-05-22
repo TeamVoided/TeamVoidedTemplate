@@ -3,7 +3,6 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-
 plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.iridium)
@@ -84,6 +83,8 @@ loom {
             programArgs("--quickPlaySingleplayer", "test", "--username", username)
             uuid?.let { programArgs("--uuid", it) }
         }
+
+        forEach { it.vmArgs("-XX:+AllowEnhancedClassRedefinition") }
     }
 }
 
