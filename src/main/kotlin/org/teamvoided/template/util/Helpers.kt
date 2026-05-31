@@ -15,6 +15,7 @@ fun isDev() = FabricLoader.getInstance().isDevelopmentEnvironment
 
 fun <T : Any> isModHolder(holder: Holder<T>) = holder.`is` { it.location().namespace == MODID }
 
+// .holders() -> .listElements()
 fun <T : Any> getModHolders(registry: Registry<T>): List<Holder.Reference<T>> = registry.holders()
     .filter(::isModHolder)
     .toList()

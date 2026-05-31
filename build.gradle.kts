@@ -16,12 +16,16 @@ repositories {
     maven("https://teamvoided.org/releases") { content { includeGroup("org.teamvoided") } }
     maven("https://teamvoided.org/snapshots") { content { includeGroup("org.teamvoided") } }
     maven("https://maven.fzzyhmstrs.me/") { name = "FzzyMaven"; content { includeGroup("me.fzzyhmstrs") } }
-    maven("https://maven.terraformersmc.com/") {
+    maven("https://maven.terraformersmc.com/") { // ModMenu, EMI
         name = "Terraformers"
         content {
             includeGroup("com.terraformersmc")
             includeGroup("dev.emi")
         }
+    }
+    maven("https://maven.ryanhcode.dev/releases") { // ImGuiMC
+        name = "RyanHCode Maven"
+        content { includeGroup("foundry.imguimc") }
     }
     maven("https://api.modrinth.com/maven") { content { includeGroup("maven.modrinth") } }
     mavenLocal()
@@ -85,12 +89,12 @@ loom {
 
         forEach {
             it.vmArgs(
-        // If enabled this you can hotswap basally anything
-        // Requires a JetBrains runtime!
+                // If enabled this you can hotswap basally anything
+                // Requires a JetBrains runtime!
 //                "-XX:+AllowEnhancedClassRedefinition",
-        // If enabled this you can hotswap mixins
-        // Requires you to add MIXIN_PATH to your .env file
-        // Here is how to find the path: https://docs.fabricmc.net/develop/getting-started/intellij-idea/launching-the-game#1-locate-the-mixin-library-jar
+                // If enabled this you can hotswap mixins
+                // Requires you to add MIXIN_PATH to your .env file
+                // Here is how to find the path: https://docs.fabricmc.net/develop/getting-started/intellij-idea/launching-the-game#1-locate-the-mixin-library-jar
 //                "-javaagent:${System.getProperty("MIXIN_PATH")}"
             )
         }

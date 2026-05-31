@@ -16,8 +16,7 @@
     modmenu = "11.0.3"
     emi = "1.1.24+1.21.1"
     # Testing
-    creative_works = "0.5.0"
-    imguimc = "1.21.1-1.0.8"
+    creative_works = "0.6.1+1.21.1"
 
 [libraries]
     # Dependencies
@@ -33,9 +32,8 @@
     emi = { module = "dev.emi:emi-fabric", version.ref = "emi" }
     # Testing
     creative-works = { module = "org.teamvoided:creative_works", version.ref = "creative_works" }
-    imguimc = { module = "maven.modrinth:imgui-mc", version.ref = "imguimc" }
 [bundles]
-    cw = [ "creative-works", "imguimc" ]
+    cw = [ "creative-works" ]
 
 [plugins]
     kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
