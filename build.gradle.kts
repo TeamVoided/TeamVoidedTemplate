@@ -69,26 +69,27 @@ loom {
 
     runs {
         named("client") {
-            programArgs("--username", username)
-            uuid?.let { programArgs("--uuid", it) }
+            runDirectory = File("run")
+            programArguments.addAll("--username", username)
+            uuid?.let { programArguments.addAll("--uuid", it) }
         }
 
         create("randomClient") {
             client()
-            runDir("run")
-            ideConfigGenerated(true)
+            runDirectory = File("run")
         }
 
         create("TestWorld") {
             client()
-            runDir("run")
-            ideConfigGenerated(true)
-            programArgs("--quickPlaySingleplayer", "test", "--username", username)
-            uuid?.let { programArgs("--uuid", it) }
+            runDirectory = File("run")
+            programArguments.addAll("--quickPlaySingleplayer", "test", "--username", username)
+            uuid?.let { programArguments.addAll("--uuid", it) }
         }
 
         forEach {
-            it.vmArgs(
+            it.generateRunConfig = true
+            it.preferGradleTask = true
+            it.jvmArguments.addAll(
                 // If enabled this you can hotswap basally anything
                 // Requires a JetBrains runtime!
 //                "-XX:+AllowEnhancedClassRedefinition",
