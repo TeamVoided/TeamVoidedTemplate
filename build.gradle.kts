@@ -13,8 +13,6 @@ plugins {
 
 repositories {
     maven("https://maven.fabricmc.net/")
-    maven("https://teamvoided.org/releases") { content { includeGroup("org.teamvoided") } }
-    maven("https://teamvoided.org/snapshots") { content { includeGroup("org.teamvoided") } }
     maven("https://maven.fzzyhmstrs.me/") { name = "FzzyMaven"; content { includeGroup("me.fzzyhmstrs") } }
     maven("https://maven.terraformersmc.com/") { // ModMenu, EMI
         name = "Terraformers"
@@ -30,6 +28,8 @@ repositories {
     maven("https://api.modrinth.com/maven") { content { includeGroup("maven.modrinth") } }
     mavenLocal()
     mavenCentral()
+    maven("https://teamvoided.org/releases") { content { includeGroup("org.teamvoided") } }
+    maven("https://teamvoided.org/snapshots") { content { includeGroup("org.teamvoided") } }
 }
 
 dependencies {
@@ -133,7 +133,7 @@ tasks {
     sourceSets.forEach { set ->
         named<ProcessResources>(set.processResourcesTaskName) {
             var expandProps = iridium.props.toMutableMap()
-            iridium.appendLibsVersionProps(expandProps, File("libs.versions.toml"))
+            iridium.appendLibsVersionProps(expandProps, projectDir.resolve("libs.versions.toml"))
             filesMatching(
                 listOf("pack.mcmeta", "fabric.mod.json", "META-INF/mods.toml", "META-INF/neoforge.mods.toml")
             ) {
@@ -156,7 +156,7 @@ uploadScript {
     modrinthId = "id"
     curseId = "0"
 
-    changelog = File("changelog.md").readText()
+    changelog = projectDir.resolve("changelog.md").readText()
 
     version += libs.versions.minecraft.get()
     versionName = "${iridium.modName()} ${iridium.modVersion}"
