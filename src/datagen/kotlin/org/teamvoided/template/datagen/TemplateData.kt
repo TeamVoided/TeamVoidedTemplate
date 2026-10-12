@@ -51,7 +51,7 @@ object TemplateData : DataGeneratorEntrypoint {
         }
 
         fun <T : Any> Entries.addEverything(registry: RegistryLookup<T>): MutableList<Holder<T>> {
-            return registry.listElementIds().map { add(registry, it) }.toList()
+            return registry.listElementIds().map { add(registry, it) }.toList().toMutableList()
         }
 
     }
